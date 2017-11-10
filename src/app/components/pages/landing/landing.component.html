@@ -1,0 +1,70 @@
+<div [@fadeInOut]>
+  <div style="width:100%">
+    <div fxFlex fxLayoutAlign="center center" class="bgImage" style="height:65vh; width: 100%;text-shadow: 2px 2px 4px #000;">
+      <h1  style="padding-left:10px;" class="setFont text-right accentColorText" >Callum<br>Tech</h1>
+      <h3 class="h3 text-left fa-inverse" style="padding-left:10px;" fxShow="false" fxShow.gt-sm>
+        Flexible Frameworks<br>
+        Industry Standards<br>
+        Responsive Designs<br>
+      </h3>
+      <h3 class="h4 text-left fa-inverse" style="padding-left:10px;"  fxHide="false" fxHide.gt-sm>
+        Flexible Frameworks<br>
+        Industry Standards<br>
+        Responsive Designs<br>
+      </h3>
+    </div>
+  </div>
+  <!--Projects-->
+  <div  style="background-color: white;" >
+    <div class="container">
+      <div class="row align-items-center text-center primaryColorText" style="padding: 20px;">
+        <div class="col-md-4">
+          <div class="col-md-12" (mouseover)="endUserM=true" (mouseout)="endUserM=false"><br>
+            <i class="fa fa-user-circle fa-5x" [ngClass]="{'fadeColor': endUserM==true, 'primaryColorText': endUserM==false}"></i>
+            <h3 >END USER</h3>
+            <div class="col-md-12"><hr><p>
+              The care and attention to detail for end users is exactly what is taken into consideration when it comes to site layout and framework choice.
+            </p></div>
+          </div><br>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-12" (mouseover)="frameM=true" (mouseout)="frameM=false"><br>
+            <i class="fa fa-code fa-5x" [ngClass]="{'fadeColor': frameM==true, 'primaryColorText': frameM==false}"></i>
+            <h3 >FRAMEWORKS</h3>
+            <div class="col-md-12"><hr><p>
+              Taking advantage of the latest web development frameworks from around the world to ensure the latest features and strict industry standard.
+            </p></div>
+          </div><br>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-12" (mouseover)="designM=true" (mouseout)="designM=false"><br>
+            <i class="fa fa-eye fa-5x" [ngClass]="{'fadeColor': designM==true, 'primaryColorText': designM==false}"></i>
+            <h3 >DESIGN STANDARD</h3>
+            <div class="col-md-12"><hr><p>
+              Following the design and color standards of Google to ensure end user experience is friendly and aesthetically pleasing.
+            </p></div>
+          </div><br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Info 1-->
+  <div class="row align-items-center text-center primaryColorBG" style="padding: 20px;">
+    <div class="container fa-inverse" (mouseover)="deviceM=true" (mouseout)="deviceM=false">
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
+        <i class="material-icons" style="font-size: 170px" [ngClass]="{'fadeColor': deviceM==true, 'defaultTextColorInverse': deviceM==false}">phonelink_setup</i>
+      </div>
+      <div class="col-md-8">
+        <h1>
+          Device friendly
+        </h1>
+        <hr>
+        <p>
+          Responsive designs created for the modern world, following the latest industry standard to ensure sites are ready for use in on launch for any device in any circumstance.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

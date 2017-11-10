@@ -1,0 +1,87 @@
+<div [class]="themeClass">
+  <mat-sidenav-container class="all-wrap" fullscreen>
+
+    <!-- Navbar -->
+    <div class="page-wrap">
+      <div>
+        <mat-toolbar class="fixed-navbar mat-elevation-z6" color="primary">
+          <mat-toolbar-row>
+          <button mat-button (click)="sidenav.open()" fxHide="false" fxHide.gt-lg>
+            <mat-icon>menu</mat-icon>
+          </button>
+          <div fxLayout>
+            <button mat-button routerLink="/"><div class="title">{{title}}</div></button>
+          </div>
+          <div fxFlex="grow"></div>
+          <div style="padding-right: 20px;">
+            <div fxLayout fxShow="false" fxShow.gt-lg>
+              <button mat-button [mat-menu-trigger-for]="infoMenu"><span>Information</span></button>
+              <button mat-button [mat-menu-trigger-for]="toolsMenu"><span>Tools</span></button>
+              <button mat-icon-button [mat-menu-trigger-for]="colors"><mat-icon>format_color_fill</mat-icon></button>
+            </div>
+          </div>
+          </mat-toolbar-row>
+          <mat-toolbar-row>
+            <p>test</p>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
+      <!--Show the page content-->
+      <div style="padding-top: 42px;" fxShow="false" fxShow.gt-xs></div>
+      <div style="padding-top: 35px;" fxHide="false" fxHide.gt-xs></div>
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+      <footer>
+        <h5 class="text-center container" style="padding-left: 20px;padding-right: 20px;">
+          <hr>
+          Copyright © and Created by Developer Callum Chisholm - 2017 - callum.l.chisholm@gmail.com - 04/23/1996
+        </h5>
+      </footer>
+
+    </div>
+
+
+    <!--Sidenav content -->
+    <mat-sidenav mode="push" #sidenav [fixedInViewport]="true" style="width: 250px;" #sidenav>
+      <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.close()">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+      </mat-toolbar>
+      <button mat-menu-item [mat-menu-trigger-for]="infoMenu"><mat-icon>info</mat-icon>Information</button>
+      <button mat-menu-item [mat-menu-trigger-for]="toolsMenu"><mat-icon>build</mat-icon>Tools</button>
+      <button mat-menu-item [mat-menu-trigger-for]="colors"><mat-icon>format_color_fill</mat-icon>Change theme</button>
+    </mat-sidenav>
+
+    <!-- subText menus -->
+    <mat-menu #infoMenu="matMenu">
+      <button mat-menu-item routerLink="/overview" routerLinkActive="accentColorText" (click)="sidenav.close()">
+        <mat-icon>work</mat-icon>
+        <span>Resume</span>
+      </button>
+      <button mat-menu-item routerLink="/contact" routerLinkActive="accentColorText" (click)="sidenav.close()">
+        <mat-icon>record_voice_over</mat-icon>
+        <span>Contact</span>
+      </button>
+    </mat-menu>
+
+
+    <mat-menu #toolsMenu="matMenu">
+      <button mat-menu-item routerLink="/bac" (click)="sidenav.close()" routerLinkActive="accentColorText">
+        <mat-icon style="margin-top: -10px;"><i class="fa fa-user-md" aria-hidden="true" ></i></mat-icon>
+        <span>BAC calculator</span>
+      </button>
+      <button mat-menu-item routerLink="/dashboard" (click)="sidenav.close()" routerLinkActive="accentColorText">
+        <mat-icon>http</mat-icon>
+        <span>IP information</span>
+      </button>
+    </mat-menu>
+
+    <mat-menu #colors="matMenu" class="text-center">
+      <button mat-menu-item (click)="setDarkTheme();sidenav.close()"><mat-icon style="margin-top: -10px;"><i class="fa fa-moon-o" aria-hidden="true" ></i></mat-icon>Lights off</button>
+      <button mat-menu-item (click)="setLightTheme();sidenav.close()"><mat-icon style="margin-top: -10px;"><i class="fa fa-sun-o" aria-hidden="true" ></i></mat-icon>Lights on</button>
+    </mat-menu>
+
+  </mat-sidenav-container>
+</div>

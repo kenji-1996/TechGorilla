@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+@include mat-core();
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+@import "/app/themes/dark-theme.scss";
+@import "/app/themes/light-theme.scss";
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
+
+.light-theme {
+  @include angular-material-theme($light-theme);
+  //@include theme-color-grabber($light-theme);
+}
